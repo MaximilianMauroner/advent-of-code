@@ -1,28 +1,28 @@
 package twentytwentytwo.five;
 
+import java.io.*;
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class A {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         String a = "";
-        while (scanner.hasNextLine()) {
-            String b = scanner.nextLine();
-            if (b.contains("END")) break;
-            a += b + "\n";
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(Paths.get(new File(A.class.getResource("input.txt").getPath()).getPath()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-//        String a =
-//                "    [D]    \n" +
-//                        "[N] [C]    \n" +
-//                        "[Z] [M] [P]\n" +
-//                        " 1   2   3 \n" +
-//                        "\n" +
-//                        "move 1 from 2 to 1\n" +
-//                        "move 3 from 1 to 3\n" +
-//                        "move 2 from 2 to 1\n" +
-//                        "move 1 from 1 to 2";
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            a += line + "\n";
+            System.out.println(line);
+        }
+        scanner.close();
 
         String[] div = a.split("move ");
         List<List<String>> stacks = new ArrayList<>();

@@ -1,5 +1,9 @@
 package twentytwentytwo.one;
 
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -7,15 +11,17 @@ import java.util.Scanner;
 
 public class B {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         int max = 0;
         int curr = 0;
         List<Integer> list = new ArrayList<>();
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(Paths.get(new File(A.class.getResource("input.txt").getPath()).getPath()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         while (scanner.hasNextInt()) {
             String s = scanner.nextLine();
-            if (s.equals("END")) {
-                break;
-            }
             System.out.println(s);
             if (s.isEmpty()) {
                 list.add(curr);

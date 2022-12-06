@@ -1,13 +1,22 @@
 package twentytwentytwo.two;
 
-import java.util.Scanner;
+import twentytwentytwo.one.A;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Scanner;
 
 
 public class B {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(Paths.get(new File(A.class.getResource("input.txt").getPath()).getPath()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         System.out.println();
         int counter = 0;
         while (scanner.hasNext()) {
