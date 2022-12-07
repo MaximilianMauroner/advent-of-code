@@ -1,0 +1,14 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8•°¿µÎ0
+2
+java:S1643"Use a StringBuilder instead.( üŽØ
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ8…×ÂµÎ0
+_
+java:S6353,"=Use concise character class syntax '\\D' instead of '[^0-9]'.(ß×‘øÿÿÿÿ8‡×ÂµÎ0
+[
+java:S11554">Use isEmpty() to check whether the collection is empty or not.(ÝÏÒ‰8‡×ÂµÎ0
+U	java:S1065"9Replace this use of System.out or System.err by a logger.(½ª â8ˆ×ÂµÎ0
+K
+java:S1128")Remove this unused import 'java.net.URL'.(ñìÁ„üÿÿÿÿ8½”ÃµÎ0
+L
+java:S1128"/Remove this unused import 'java.nio.file.Path'.(×²êÂ8 ¢ÄµÎ0

@@ -1,0 +1,13 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ô½ÓµÎ0
+1
+java:S1643"Use a StringBuilder instead.( Ç 1
+a
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(½Ê™'8š¾ÓµÎ0
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+A
+java:S1905 "&Remove this unnecessary cast to "int".(¦²·Ëûÿÿÿÿ
+<
+java:S1905""&Remove this unnecessary cast to "int".(©•À’
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(‚¨Ö§

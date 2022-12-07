@@ -1,0 +1,9 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ÑŸÔµÎ0
+b
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(°ãé’8Ì ÔµÎ0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÎÌì™Í0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ù¯¼´8ÑÌì™Í0
+>	java:S131+""Add a default case to this switch.(˜ë÷â8ÓÌì™Í0
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(º‘Ô‹úÿÿÿÿ8ÔÌì™Í0
+>	java:S1317""Add a default case to this switch.(×î²”8ÕÌì™Í0

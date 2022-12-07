@@ -1,0 +1,6 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8õç˜¶Î0
+s	java:S127"XRefactor the code in order to not assign to this loop counter from within the loop body.(çàšo8õç˜¶Î0
+b
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(°ãé’8…è˜¶Î0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(º‘Ô‹úÿÿÿÿ8Šè˜¶Î0
