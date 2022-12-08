@@ -1,106 +1,175 @@
 package twentytwentytwo.seven;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Scanner;
 
-class ListNode {
-    List<Map<String, Integer>> files = new ArrayList<>();
-    String dir;
-    String parent;
-    List<ListNode> children = new ArrayList<>();
+class fileobject {
+    boolean filetype; //true file false dir
+    long size;
+    String name;
+    int parent;
 
-    ListNode(List<Map<String, Integer>> files) {
-        this.files = files;
+    public fileobject(String name, String size, int parent) {
+        try {
+            this.size = (long) Integer.parseInt(size);
+        } catch (Exception e) {
+            this.size = 0;
+        }
+        filetype = true;
+        this.name = name;
+        this.parent = parent;
     }
 
-    ListNode(List<Map<String, Integer>> files, List<ListNode> next) {
-        this.files = files;
-        this.children = next;
-    }
-
-    ListNode(String dir, String parent) {
-        this.dir = dir;
+    public fileobject(String name, int parent) {
+        filetype = false;
+        size = 0;
+        this.name = name;
         this.parent = parent;
     }
 }
 
 public class A {
-
-    public static int debthCounter = 0;
+    public static fileobject[] filelist = new fileobject[1];
+    public static int filelistcurrentdir = 0;
 
     public static void main(String[] args) {
-        Scanner scanner = null;
+        int filesizelimit = 100000;
+        long counter = 0;
+        String filename = "C:\\Users\\maxim\\Desktop\\Projects\\SpeedCoding\\AdventOfCode\\src\\twentytwentytwo\\seven\\input.txt";
+        filelist[0] = new fileobject("/", -1);
         try {
-            scanner = new Scanner(Paths.get(new File(A.class.getResource("input.txt").getPath()).getPath()));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            BufferedReader br = new BufferedReader(new FileReader(filename));
+            String line = br.readLine();
+            while (line != null) {
+                if (isCommand(line))
+                    processCommand(line);
+                else
+                    addFileObject(line);
+                line = br.readLine();
+            }
+            br.close();
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        ListNode node = new ListNode("/", "");
-        while (scanner.hasNextLine()) {
-            String s = scanner.nextLine();
-            identifyFiles(scanner, s, node);
+        for (int i = 0; i < filelist.length; i++) {
+            if (!filelist[i].filetype)
+                if (getDirSize(i) <= filesizelimit)
+                    counter += getDirSize(i);
         }
-        printNode(node, 0);
+        System.out.println("\nPART 1: " + counter);
+        System.out.println("PART 2: " + findDir());
     }
 
-    public static void identifyFiles(Scanner scanner, String s, ListNode node) {
-        if (s.contains("$")) {
-            if (s.contains("cd /")) {
-                debthCounter = 0;
-            } else if (s.contains("cd ..")) {
-                debthCounter--;
-            } else if (s.contains("cd")) {
-                debthCounter++;
-                addFolders(node, s.split("cd")[1], debthCounter);
-            } else if (s.contains("ls")) {
-                boolean isLs = true;
-                while (isLs && scanner.hasNextLine()) {
-                    String nextLine = scanner.nextLine();
-                    if (nextLine.contains("$")) {
-                        isLs = false;
-                        identifyFiles(scanner, nextLine, node);
-                    } else {
-                        if (nextLine.contains("dir")) {
-                            addFolders(node, nextLine.split("dir")[1], debthCounter + 1, "");
-                        }
-                    }
-                }
-            }
-        }
+    public static void addFileObject(String line) {
+        String lineParts[] = line.split(" ");
+        if (lineParts.length >= 2)
+            if (lineParts[0].contains("dir"))
+                filelist = addElement(new fileobject(lineParts[1], filelistcurrentdir), filelist);
+            else
+                filelist = addElement(new fileobject(lineParts[1], lineParts[0], filelistcurrentdir), filelist);
     }
 
-    public static void addFiles(ListNode listNode, String fileName, int filesize, int level, String parentName) {
+    public static boolean isCommand(String line) {
+        if (line.length() > 0)
+            if (line.charAt(0) == '$')
+                return true;
+        return false;
     }
 
-    public static void addFolders(ListNode listNode, String name, int level, String parentName) {
-        System.out.println("level: " + level + " name: " + name + " parent: " + parentName);
-        if (level == 0 && (parentName.equals(listNode.dir) || parentName.equals(""))) {
-            if (!listNode.children.contains(new ListNode(name, parentName))) {
-                System.out.println("new node" + name);
-                listNode.children.add(new ListNode(name, parentName));
-            }
-        } else {
-            for (ListNode child : listNode.children) {
-                addFolders(child, name, level - 1, parentName);
-            }
+    public static boolean processCommand(String line) {
+        String[] commands = line.split(" ");
+        if (commands[1].contains("cd")) {
+            filelistcurrentdir = getDirID(commands[2]);
+            return (false);
         }
-
+        if (commands[1].contains("ls"))
+            return (true);
+        return (false);
     }
 
-    //    printer all the ListNodes in the tree
-    public static void printNode(ListNode listNode, int level) {
-        System.out.println(listNode.dir + listNode.children.size() + " " + level);
-        if (listNode.children != null) {
-            for (ListNode node : listNode.children) {
-                printNode(node, level + 1);
-//                for (int i = 0; i < level; i++) {
-//                    System.out.print("\t");
-//                }
-//                System.out.println(node.dir);
-            }
+    public static int getDirID(String name) {
+        int t_int = filelistcurrentdir;
+        if (name.contains("/") || name.contains("\\"))
+            return (0);
+        if (name.contains("..")) {
+            t_int = filelist[filelistcurrentdir].parent; //get parent
+            if (t_int < 0) t_int = 0;
+            return t_int;
         }
+        for (int i = 0; i < filelist.length; i++)
+            if (filelist[i].name.compareTo(name) == 0)
+                if (filelist[i].parent == filelistcurrentdir)
+                    return (i);
+        return (t_int);
+    }
+
+    public static long findDir() {
+        long fsSize = 70000000;
+        long fsNeeded = 30000000;
+        int currentChamp = 0;
+        for (int i = 1; i < filelist.length; i++)
+            if (!filelist[i].filetype) {
+                long t_long = fsSize - getDirSize(0) + getDirSize(i);
+                if (t_long >= fsNeeded)
+                    if (getDirSize(i) < getDirSize(currentChamp))
+                        currentChamp = i;
+            }
+        return getDirSize(currentChamp);
+    }
+
+    public static long getDirSize(int id) {
+        long size = 0;
+        int children[] = findChildren(id);
+        if (children != null) {
+            for (int i = 0; i < children.length; i++)
+
+                if (filelist[children[i]].filetype)
+                    size += filelist[children[i]].size;
+                else
+                    size += getDirSize(children[i]);
+        }
+        return size;
+    }
+
+    public static int findDistanceFromStart(int id) {
+        int distance = 0;
+        int parent = filelist[id].parent;
+        while (parent >= 0) {
+            distance++;
+            parent = filelist[parent].parent;
+        }
+        return distance;
+    }
+
+    public static int[] findChildren(int id) {
+        int[] children = null;
+        for (int i = 0; i < filelist.length; i++)
+            if (filelist[i].parent == id)
+                children = addElement2(i, children);
+        return children;
+    }
+
+    public static fileobject[] addElement(fileobject newObject, fileobject[] oldArray) {
+        int newArrayLength = 1;
+        if (oldArray != null)
+            newArrayLength = oldArray.length + 1;
+        fileobject[] t_array = new fileobject[newArrayLength];
+        for (int i = 0; i < oldArray.length; i++)
+            t_array[i] = oldArray[i];
+        t_array[t_array.length - 1] = newObject;
+        return t_array;
+    }
+
+    public static int[] addElement2(int newObject, int[] oldArray) {
+        int newArrayLength = 1;
+        if (oldArray != null)
+            newArrayLength = oldArray.length + 1;
+        int[] t_array = new int[newArrayLength];
+        if (oldArray != null)
+            for (int i = 0; i < oldArray.length; i++)
+                t_array[i] = oldArray[i];
+        t_array[t_array.length - 1] = newObject;
+        return t_array;
     }
 }

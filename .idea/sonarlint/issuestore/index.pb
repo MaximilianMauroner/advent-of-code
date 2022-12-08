@@ -33,5 +33,3 @@ Q
 !src/twentytwentytwo/six/input.txt,6\1\61a8a541fac75f638224fd073b64fe1c9adab3b8
 N
 src/twentytwentytwo/six/B.java,c\5\c5675d5528d802132e8edfeb04d51d2fe4edffec
-N
-src/twentytwentytwo/six/A.java,9\3\93d0c4a9c4e4133d02f36f8027d00eee9ae821cd
