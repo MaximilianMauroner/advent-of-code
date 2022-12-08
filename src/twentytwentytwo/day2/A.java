@@ -1,4 +1,4 @@
-package twentytwentytwo.two;
+package twentytwentytwo.day2;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ public class A {
     public static void main(String[] args) {
         Scanner scanner = null;
         try {
-            scanner = new Scanner(Paths.get(new File(twentytwentytwo.one.A.class.getResource("input.txt").getPath()).getPath()));
+            scanner = new Scanner(Paths.get(new File(twentytwentytwo.day1.A.class.getResource("input.txt").getPath()).getPath()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

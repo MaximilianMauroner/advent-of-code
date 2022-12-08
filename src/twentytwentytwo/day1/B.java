@@ -1,4 +1,4 @@
-package twentytwentytwo.one;
+package twentytwentytwo.day1;
 
 
 import java.io.File;

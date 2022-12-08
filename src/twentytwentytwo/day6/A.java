@@ -1,4 +1,4 @@
-package twentytwentytwo.six;
+package twentytwentytwo.day6;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class B {
+public class A {
     public static void main(String[] args) {
         Scanner scanner = null;
         try {
@@ -20,7 +20,7 @@ public class B {
             String a = scanner.nextLine();
             List<Character> chars = new ArrayList<>();
             for (int i = 0; i < a.length(); i++) {
-                if (chars.size() == 14) {
+                if (chars.size() == 4) {
                     if (isFullyUnique(chars)) {
                         counter = i;
                         System.out.println(counter);

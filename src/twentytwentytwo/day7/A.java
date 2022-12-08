@@ -1,8 +1,6 @@
-package twentytwentytwo.seven;
+package twentytwentytwo.day7;
 
 import java.io.*;
-import java.nio.file.Paths;
-import java.util.Scanner;
 
 class fileobject {
     boolean filetype; //true file false dir

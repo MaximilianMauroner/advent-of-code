@@ -1,6 +1,6 @@
-package twentytwentytwo.two;
+package twentytwentytwo.day2;
 
-import twentytwentytwo.one.A;
+import twentytwentytwo.day1.A;
 
 import java.io.File;
 import java.io.IOException;

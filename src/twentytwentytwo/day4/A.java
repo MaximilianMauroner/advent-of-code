@@ -1,4 +1,4 @@
-package twentytwentytwo.four;
+package twentytwentytwo.day4;
 
 import java.io.File;
 import java.io.IOException;
