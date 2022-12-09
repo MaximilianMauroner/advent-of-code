@@ -1,13 +1,0 @@
-
-g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8«™ÅµÎ0
-9
-java:S1643"Use a StringBuilder instead.( üŽØ8¬™ÅµÎ0
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ñ—¸½úÿÿÿÿ8º±“µÎ0
-_
-java:S6353,"=Use concise character class syntax '\\D' instead of '[^0-9]'.(ß×‘øÿÿÿÿ8¹±“µÎ0
-T	java:S1063"9Replace this use of System.out or System.err by a logger.(É¥þX8»±“µÎ0
-[
-java:S11556">Use isEmpty() to check whether the collection is empty or not.(ÝÏÒ‰8º±“µÎ0
-U	java:S1067"9Replace this use of System.out or System.err by a logger.(½ª â8ŽšÅµÎ0
-F
-java:S5413H")Verify that "remove()" is used correctly.(¼ù‰ç8¼±“µÎ0
