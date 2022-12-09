@@ -1,0 +1,10 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+r	java:S127/"XRefactor the code in order to not assign to this loop counter from within the loop body.(£ΤΪ—ωÿÿÿÿ
+m	java:S127@"XRefactor the code in order to not assign to this loop counter from within the loop body.(•Χο‡
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•λ±΅8±Ε±Ο0
+[
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(°γι’
+Z	java:S106$"9Replace this use of System.out or System.err by a logger.(Ί‘Τ‹ϊÿÿÿÿ8Φ―Ο0
+h
+java:S3776'"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(±έ»ώ
