@@ -18,7 +18,7 @@ public class B {
 
         Scanner scanner = null;
         try {
-            scanner = new Scanner(Paths.get(new File(A.class.getResource("example.txt").getPath()).getPath()));
+            scanner = new Scanner(Paths.get(new File(A.class.getResource("input.txt").getPath()).getPath()));
         } catch (
                 IOException e) {
             throw new RuntimeException(e);
