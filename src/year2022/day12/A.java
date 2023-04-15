@@ -15,12 +15,7 @@ public class A {
 
     public static void main(String[] args) {
         Scanner scanner = null;
-        try {
-            scanner = new Scanner(Paths.get(new File(A.class.getResource("example.txt").getPath()).getPath()));
-        } catch (
-                IOException e) {
-            throw new RuntimeException(e);
-        }
+        scanner = new Scanner(A.class.getResource("day12-example.txt").getPath());
         while (scanner.hasNextLine()) {
             map.add(scanner.nextLine().toCharArray());
         }
