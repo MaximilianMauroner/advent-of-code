@@ -1,0 +1,10 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(îÀÆð
+[
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(Ã­‰«
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Úœ—œ8¥«¹ªÒ0
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(´ªÐµùÿÿÿÿ8¦«¹ªÒ0
+N
+java:S1144R"1Remove this unused private "getEntrances" method.(©¡’·8««¹ªÒ0

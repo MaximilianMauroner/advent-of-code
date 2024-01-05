@@ -1,0 +1,27 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²”­¯ùÿÿÿÿ
+b
+java:S2095"EUse try-with-resources or close this "Scanner" in a "finally" clause.(°ãé’8š³„Ò0
+?
+java:S5413+")Verify that "remove()" is used correctly.(î€ËÚ
+?
+java:S5413+")Verify that "remove()" is used correctly.(î€ËÚ
+Y
+java:S1155*">Use isEmpty() to check whether the collection is empty or not.(¾Ò‰ûÿÿÿÿ
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(âÅŠÏûÿÿÿÿ
+S	java:S1060"9Replace this use of System.out or System.err by a logger.(œËÒœúÿÿÿÿ
+N	java:S1063"9Replace this use of System.out or System.err by a logger.(¶÷Ğ²
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(¤¸¤ûÿÿÿÿ
+D
+java:S1172:".Remove this unused method parameter "counter".(º¡ÈÒ
+W
+java:S6353;"<Use concise character class syntax '\\d' instead of '[0-9]'.(ìè‰±øÿÿÿÿ
+W
+java:S6353J"<Use concise character class syntax '\\d' instead of '[0-9]'.(Ïµı½ıÿÿÿÿ
+N
+java:S1854T"8Remove this useless assignment to local variable "init".(ŠõÖ¼
+?
+java:S1481T")Remove this unused "init" local variable.(ŠõÖ¼
+]
+java:S1128"@Remove this unused import 'javax.naming.PartialResultException'.(Ç…€8©š³„Ò0
